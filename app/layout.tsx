@@ -1,9 +1,6 @@
-"use client";
-
 import "./globals.css";
 import { Inter } from "next/font/google";
-import { Provider } from "react-redux";
-import { store } from "@/lib/store";
+import { Providers } from "@/components/Providers";
 import "aos/dist/aos.css";
 import type { Metadata } from "next";
 
@@ -13,14 +10,6 @@ export const metadata: Metadata = {
   title: "MindFlow — Journal Freely, Reflect Deeply",
   description:
     "MindFlow is your serene digital space to write, reflect, and grow. Capture your thoughts effortlessly with a distraction-free journaling experience.",
-  keywords: [
-    "journal",
-    "mindfulness",
-    "reflection",
-    "mental health",
-    "writing",
-  ],
-  authors: [{ name: "Jane Sidney" }],
 };
 
 export default function RootLayout({
@@ -30,8 +19,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={inter.className}>
-        <Provider store={store}>{children}</Provider>
+      <body className={`${inter.className} bg-[#010a1f] text-gray-100`}>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
